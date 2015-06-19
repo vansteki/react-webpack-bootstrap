@@ -5,8 +5,8 @@
 // require("expose?jQuery!jquery");
 var React = require('react');
 var Dog = require('./Dog.js');
-var Db = require("Json!./db.json");
-var XD = require("Json!./XD.json");
+var Db = require("json!../db/db.json");
+var XD = require("json!../db/XD.json");
 
 var Main = React.createClass({
     getInitialState: function() {

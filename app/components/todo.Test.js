@@ -2,12 +2,14 @@
 
 var React = require('react');
 
-var Todo = React.createClass({
+var TodoTest = React.createClass({
     render() {
         return (
-        	<div></div>
+        	<div>
+
+        	</div>
         );
     }
 });
 
-module.exports = Todo;
+module.exports = TodoTest;
