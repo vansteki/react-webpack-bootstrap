@@ -7,7 +7,7 @@ var config = {
             bundle: [
                 'webpack-dev-server/client?http://localhost:8080',
                 'webpack/hot/only-dev-server',
-                path.resolve(__dirname, 'app/main.js')
+                path.resolve(__dirname, 'app/entry.js')
             ],
             vendors: 'jquery'
         },

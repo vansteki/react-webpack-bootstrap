@@ -6,6 +6,7 @@
 var React = require('react');
 var TestOne = require('./TestOne.js');
 var TestTwo = require('./TestTwo.js');
+var Dog = require('./dog.js');
 
 
 var Main = React.createClass({
@@ -27,11 +28,13 @@ var Main = React.createClass({
         return (
             <div>
                 <input type="button" onClick={this._toggle} value="Press Me!"/>
-                <input type="button" onClick={this._getUser} value="ckUser"/>
+                <input type="button" onClick={this._getUser} value="ckUser?"/>
                 {this.state.switch ? <TestOne /> : <TestTwo />}
+                <Dog />
             </div>
         );
     }
 });
 
-React.render(<Main />, document.body);
+module.exports = Main;
+// React.render(<Main />, document.body);
