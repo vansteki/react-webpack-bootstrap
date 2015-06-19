@@ -1,5 +1,3 @@
-/* TestOne.js */
-
 'use strict';
 
 var React = require('react');

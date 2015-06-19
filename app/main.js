@@ -4,10 +4,9 @@
 
 // require("expose?jQuery!jquery");
 var React = require('react');
-var TestOne = require('./TestOne.js');
-var TestTwo = require('./TestTwo.js');
-var Dog = require('./dog.js');
-
+var Dog = require('./Dog.js');
+var Db = require("Json!./db.json");
+var XD = require("Json!./XD.json");
 
 var Main = React.createClass({
     getInitialState: function() {
@@ -15,21 +14,23 @@ var Main = React.createClass({
           switch: true
         };
     },
-    _toggle() {
+    _toggle: function() {
         this.setState({
             switch: !this.state.switch
         });
     },
-    _getUser(e, n, url) {
+    _getUser: function(e, n, url) {
         var url = url || 'http://jsonplaceholder.typicode.com/users/1';
         jQuery.getJSON(url, function(res) { console.log(res)});
     },
-    render() {
+    _iniTestData: function() {
+        window.db = Db.data;
+        window.xd = XD.results;
+    },
+    render: function() {
         return (
             <div>
-                <input type="button" onClick={this._toggle} value="Press Me!"/>
-                <input type="button" onClick={this._getUser} value="ckUser?"/>
-                {this.state.switch ? <TestOne /> : <TestTwo />}
+                <input type='button' onClick={this._iniTestData} value="expose Db to window.db"/>
                 <Dog />
             </div>
         );
@@ -37,4 +38,3 @@ var Main = React.createClass({
 });
 
 module.exports = Main;
-// React.render(<Main />, document.body);
