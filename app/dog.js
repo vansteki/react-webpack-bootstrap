@@ -5,9 +5,7 @@ var React = require('react');
 var Dog = React.createClass({
     render() {
         return (
-            /* jshint ignore: start*/
-            <div><h1>Bark!!!FU! YOOO!</h1></div>
-            /* jshint ignore: end*/
+            <div><h1>Wu! DOG's daily life!</h1></div>
         );
     }
 });
