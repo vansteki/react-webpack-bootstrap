@@ -1,12 +1,11 @@
-/* main.js */
-
 'use strict';
 
 // require("expose?jQuery!jquery");
 var React = require('react');
 var Dog = require('./Dog.js');
-var Db = require("json!../db/db.json");
-var XD = require("json!../db/XD.json");
+// var Todo = require('./todo.allin1.js');
+var db = require("json!../db/db.json");
+var ftp = require("json!../db/ftp.json");
 
 var Main = React.createClass({
     getInitialState: function() {
@@ -24,13 +23,15 @@ var Main = React.createClass({
         jQuery.getJSON(url, function(res) { console.log(res)});
     },
     _iniTestData: function() {
-        window.db = Db.data;
-        window.xd = XD.results;
+        window.db = db.data;
+        window.ftp = ftp.results;
+        console.log("{\n  window.ftp\n  window.db\n}\nloaded!")
     },
     render: function() {
+        this._iniTestData();
         return (
             <div>
-                <input type='button' onClick={this._iniTestData} value="expose Db to window.db"/>
+                <input type='button' onClick={this._iniTestData} value="expose DB to window.db"/>
                 <Dog />
             </div>
         );
